@@ -1,0 +1,42 @@
+\documentclass[12pt,twoside]{article}
+
+%%%%%%% Loading packages and macros %%%%%%%
+\usepackage{__packages__}
+\usepackage{__macro__}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%% PDF Formating %%%%%%% 
+\makeatletter
+\AtBeginDocument{
+  \hypersetup{
+    pdftitle = {\@title},
+    pdfauthor = {\@author},
+    pdfkeywords={\institute, \prof, \course, \assignment}
+  }
+}
+\makeatother
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%% Document %%%%%%%
+\newcommand{\assignment}{Homework \#1}
+\newcommand{\course}{Course}
+\newcommand{\prof}{Sausage}
+\newcommand{\institute}{Kellogg School of Management}
+
+\title{\course-\assignment}
+\author{Chavo}
+\date{\today}
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\nocite{*}
+\maketitle
+
+\section{Section 1.}
+\lipsum[5]
+
+\newpage
+\bibliography{__references__}
+\bibliographystyle{abbrvnat}
+\end{document}  

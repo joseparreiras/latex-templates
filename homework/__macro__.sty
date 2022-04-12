@@ -1,0 +1,57 @@
+%%%%%%% Commands %%%%%%%
+
+%% Basic Math Symbols %%
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\V}{\mathbb{V}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\simplex}{\bigtriangleup}
+\DeclarePairedDelimiter{\norm}{\lVert}{\rVert}
+\DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
+
+%% Statistical %%
+\newcommand{\pconv}{\overset{p}{\rightarrow}}
+\newcommand{\dconv}{\overset{d}{\rightarrow}}
+\newcommand{\lpconv}[1]{\overset{\mathcal{L}^#1}{\rightarrow}}
+\newcommand{\asconv}{\overset{a.s}{\rightarrow}}
+\newcommand{\conv}{\rightarrow}
+\newcommand{\Prob}{\mathbb{P}}
+\DeclarePairedDelimiter{\ind}{ \mathbbm{1}\lbrace }{\rbrace}
+
+%% Theorems %%
+\newtheorem*{claim}{\textnormal{Claim}}
+\newtheorem{prop}{\textnormal{Proposition}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%% GAME THEORY (TikZ) SETTINGS %%%%
+
+%% Nodes
+\tikzstyle{hollow node}=[circle, draw, inner sep=1.5]
+\tikzstyle{solid node}=[circle, draw, fill=black, inner sep=1.5]
+
+%% Draw
+\tikzstyle{information set}=[dashed, bend right]
+\tikzstyle{continuous}=[bend right]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%% UPDATE MACRO DEFINITIONS %%%%
+
+\makeatletter
+\renewcommand\@seccntformat[1]{}	% SET SECTION SYMBOL
+\sectionfont{\normalsize}			% SET SECTION FONT
+\subsectionfont{\normalfont}		% SET SUBSECTION FONT
+\setlength{\parindent}{24pt}		% SETUP INDENTATION
+
+\renewcommand{\maketitle}{\noindent\textnormal{\institute}\hfill\\[0.01in]
+\textnormal{\course }\hfill{Prof. \prof}\\[0.01in]
+\textnormal{\assignment}\hfill{\@date}\\[0.01in]
+\@author\hfill{}\\[0.01in]
+\smallskip\hrule\bigskip}
+\makeatother
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
