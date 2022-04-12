@@ -1,0 +1,131 @@
+%%%%%%% Presentation %%%%%%%
+
+\mode<presentation> {
+%   \setbeamertemplate{background canvas}[vertical shading][bottom=red!10,top=blue!10]
+  \setbeamertemplate{theorems}[numbered]
+  \usetheme{CambridgeUS}
+%   \usefonttheme[onlymath]{serif}
+  \usefonttheme[onlysmall]{serif}
+  \usefonttheme{structuresmallcapsserif}
+}
+
+%%%%%%% Fonts %%%%%%%
+
+\DeclareMathAlphabet{\pazocal}{OMS}{zplm}{m}{n} % pazocal fonts
+\newcommand{\bs}{\boldsymbol}
+%%%%%%% Commands %%%%%%%
+
+%% Basic Math Symbols %%
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\V}{\mathbb{V}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\simplex}{\bigtriangleup}
+\DeclarePairedDelimiter{\norm}{\lVert}{\rVert}
+\DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
+
+%% Statistical %%
+\newcommand{\pconv}{\overset{p}{\rightarrow}}
+\newcommand{\asconv}{\overset{a.s}{\rightarrow}}
+\newcommand{\conv}{\rightarrow}
+\newcommand{\Prob}{\mathbb{P}}
+\DeclarePairedDelimiter{\ind}{ \mathbbm{1}\lbrace }{\rbrace}
+
+%% Theorems %%
+\newtheorem*{claim}{\textnormal{Claim}}
+\newtheorem{prop}{\textnormal{Proposition}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%% GAME THEORY (TikZ) SETTINGS %%%%
+
+%% Nodes
+\tikzstyle{hollow node}=[circle, draw, inner sep=1.5]
+\tikzstyle{solid node}=[circle, draw, fill=black, inner sep=1.5]
+
+%% Draw
+\tikzstyle{information set}=[dashed, bend right]
+\tikzstyle{continuous}=[bend right]
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%% UPDATE MACRO DEFINITIONS %%%%
+
+% Changing Table of Contents
+\defbeamertemplate{section in toc}{red square}
+{\leavevmode\leftskip=1.75ex%
+  \llap{%
+    \usebeamerfont*{section number projected}%
+    \usebeamercolor[red!70!black]{section number projected}%
+    \vrule width2.25ex height1.85ex depth.4ex%
+    \hskip-2.25ex%
+    \hbox to2.25ex{\hfil\color{fg}\inserttocsectionnumber\hfil}}%
+  \kern1.25ex\inserttocsection\par}
+%%
+
+% Itemize Pattern %
+\defbeamertemplate{itemize item}{red square}{\color{red!70!black}{\hbox{\vrule width 1ex height 1ex}}}
+\defbeamertemplate{itemize subitem}{red square}{\footnotesize\color{red!70!black}{\hbox{\vrule width 1ex height 1ex}}}
+
+\defbeamertemplate{enumerate item}{red square}
+{
+  \hbox{%
+    \usebeamerfont*{item projected}%
+    \usebeamercolor[red!70!black]{item projected}%
+    \vrule width2.25ex height1.85ex depth.4ex%
+    \hskip-2.25ex%
+    \hbox to2.25ex{%
+      \hfil%
+      \color{fg}\insertenumlabel%
+      \hfil}%
+  }%
+}
+[action]
+{\setbeamerfont{item projected}{size=\scriptsize}}
+
+\defbeamertemplate{enumerate subitem}{red square}
+{
+  \hbox{%
+    \usebeamerfont*{item projected}%
+    \usebeamercolor[red!70!black]{item projected}%
+    \vrule width2.25ex height1.85ex depth.4ex%
+    \hskip-2.25ex%
+    \hbox to2.25ex{%
+      \hfil%
+      \color{fg}\insertenumlabel%
+      \hfil}%
+  }%
+}
+
+% Change block colors
+\setbeamercolor{block title}{fg=white,bg=red!70!black}
+\setbeamercolor{block body}{fg=black,bg=lightgray!50}
+
+%% 
+
+% Frame Title set as Section Name by Default
+\addtobeamertemplate{frametitle}{
+   \let\insertframetitle\insertsectionhead}{}
+\addtobeamertemplate{frametitle}{
+   \let\insertframesubtitle\insertsubsectionhead}{}
+   
+\makeatletter
+\CheckCommand*\beamer@checkframetitle{\@ifnextchar\bgroup\beamer@inlineframetitle{}}
+\renewcommand*\beamer@checkframetitle{\global\let\beamer@frametitle\relax\@ifnextchar\bgroup\beamer@inlineframetitle{}}
+\makeatother
+
+% TOC Appearing at the Start of Each Section
+\AtBeginSection[]
+{
+   \begin{frame}[noframenumbering]
+       \frametitle{Outline}
+       \tableofcontents[currentsection]
+   \end{frame}
+}
+
+%%
+
+% Beamer button
+\setbeamercolor{button}{fg=lightgray!50, bg=red!70!black}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
