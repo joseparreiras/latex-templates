@@ -53,50 +53,6 @@
 %%%% UPDATE MACRO DEFINITIONS %%%%
 
 % Changing Table of Contents
-\defbeamertemplate{section in toc}{red square}
-{\leavevmode\leftskip=1.75ex%
-  \llap{%
-    \usebeamerfont*{section number projected}%
-    \usebeamercolor[red!70!black]{section number projected}%
-    \vrule width2.25ex height1.85ex depth.4ex%
-    \hskip-2.25ex%
-    \hbox to2.25ex{\hfil\color{fg}\inserttocsectionnumber\hfil}}%
-  \kern1.25ex\inserttocsection\par}
-%%
-
-% Itemize Pattern %
-\defbeamertemplate{itemize item}{red square}{\color{red!70!black}{\hbox{\vrule width 1ex height 1ex}}}
-\defbeamertemplate{itemize subitem}{red square}{\footnotesize\color{red!70!black}{\hbox{\vrule width 1ex height 1ex}}}
-
-\defbeamertemplate{enumerate item}{red square}
-{
-  \hbox{%
-    \usebeamerfont*{item projected}%
-    \usebeamercolor[red!70!black]{item projected}%
-    \vrule width2.25ex height1.85ex depth.4ex%
-    \hskip-2.25ex%
-    \hbox to2.25ex{%
-      \hfil%
-      \color{fg}\insertenumlabel%
-      \hfil}%
-  }%
-}
-[action]
-{\setbeamerfont{item projected}{size=\scriptsize}}
-
-\defbeamertemplate{enumerate subitem}{red square}
-{
-  \hbox{%
-    \usebeamerfont*{item projected}%
-    \usebeamercolor[red!70!black]{item projected}%
-    \vrule width2.25ex height1.85ex depth.4ex%
-    \hskip-2.25ex%
-    \hbox to2.25ex{%
-      \hfil%
-      \color{fg}\insertenumlabel%
-      \hfil}%
-  }%
-}
 
 % Change block colors
 \setbeamercolor{block title}{fg=white,bg=red!70!black}
@@ -120,12 +76,11 @@
 {
    \begin{frame}[noframenumbering]
        \frametitle{Outline}
-       \tableofcontents[currentsection]
+       \tableofcontents[currentsection, hideothersubsections]
    \end{frame}
 }
 
-%%
-
-% Beamer button
-\setbeamercolor{button}{fg=lightgray!50, bg=red!70!black}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Image in title
+\titlegraphic{
+   \includegraphics[width=.5\textwidth]{images/kellogg_logo.jpg}
+   }

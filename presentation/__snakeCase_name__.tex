@@ -1,0 +1,33 @@
+\documentclass[11pt]{beamer}
+
+\usepackage{preamble/__packages__}
+\usepackage{preamble/__macro__}
+\usepackage{preamble/__theme__}
+
+\title[Short Title]{Title}
+\author[Short Author]{Author}
+\date{\today}
+
+\begin{document}
+
+%%%%%%%% Slides %%%%%%%%
+
+%%% Main Title %%%
+\begin{frame}
+    \maketitle
+\end{frame}
+
+%%% TOC %%%
+\section*{Roadmap}
+\begin{frame}
+    \tableofcontents[hideothersubsections]
+\end{frame}
+
+%%% References %%%
+\section*{References}
+\nocite{*}
+\begin{frame}
+\bibliographystyle{unsrt}
+\bibliography{preamble/__references__}
+\end{frame}
+\end{document}
