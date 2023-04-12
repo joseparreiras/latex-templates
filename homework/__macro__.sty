@@ -38,7 +38,6 @@
   \cfoot{\thepage}
 }
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Section Format %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -52,19 +51,52 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Theme %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\definecolor{nu purple}{HTML}{492C7F} % Purple
+\definecolor{nu lightpurple}{HTML}{E3E0ED} % Light Purple
+
+% Set caption color
+\captionsetup[table]{labelfont={color=nu purple},font={color=nu purple}} 
+\captionsetup[figure]{labelfont={color=nu purple},font={color=nu purple}}
+
+% Hyperlinks
+\hypersetup{
+  bookmarks=true,
+  colorlinks = true,
+  linkcolor = nu purple,
+  urlcolor  = nu purple,
+  citecolor = nu purple,
+  anchorcolor = nu purple,
+  pdftex,
+  pdfusetitle,
+  pdfborder={0 0 0}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Math Symbols %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Basic Math Symbols %
-\newcommand{\E}{\mathbb{E}}
-\newcommand{\V}{\mathbb{V}}
-\newcommand{\C}{\mathbb{C}}
-\newcommand{\N}{\mathbb{N}}
-\newcommand{\R}{\mathbb{R}}
-\newcommand{\Q}{\mathbb{Q}}
-\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\expvalue}[1]{\mathbb{E}\left(#1\right)}
+\newcommand{\pexpvalue}[1]{\mathbb{E}\left(#1\right)}
+\newcommand{\bexpvalue}[1]{\mathbb{E}\left[#1\right]}
+\newcommand{\cexpvalue}[1]{\mathbb{E}\left\lbrace#1\right\rbrace}
+\newcommand{\var}[1]{\mathbb{V}\left(#1\right)}
+\newcommand{\pvar}[1]{\mathbb{V}\left(#1\right)}
+\newcommand{\bvar}[1]{\mathbb{V}\left[#1\right]}
+\newcommand{\cvar}[1]{\mathbb{V}\left\lbrace#1\right\rbrace}
+\newcommand{\cov}[2]{\mathbb{C}\left(#1,#2 \right)}
+\newcommand{\pcov}[2]{\mathbb{C}\left(#1,#2 \right)}
+\newcommand{\bcov}[2]{\mathbb{C}\left[#1,#2 \right]}
+\newcommand{\ccov}[2]{\mathbb{C}\left\lbrace#1,#2 \right\rbrace}
+\newcommand{\natural}{\mathbb{N}}
+\newcommand{\real}{\mathbb{R}}
+\newcommand{\rational}{\mathbb{Q}}
+\newcommand{\integer}{\mathbb{Z}}
 \newcommand{\simplex}{\bigtriangleup}
-\DeclarePairedDelimiter{\norm}{\lVert}{\rVert}
-\DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\abs}[1]{\left\lvert#1\right\rvert}
 
 % Statistical %
 \newcommand{\pconv}{\overset{p}{\rightarrow}}
@@ -72,12 +104,14 @@
 \newcommand{\lpconv}[1]{\overset{\mathcal{L}^#1}{\rightarrow}}
 \newcommand{\asconv}{\overset{a.s}{\rightarrow}}
 \newcommand{\conv}{\rightarrow}
-\newcommand{\Prob}{\mathbb{P}}
+\newcommand{\prob}[1]{\mathbb{P}\left\lbrace #1 \right\rbrace}
 \DeclarePairedDelimiter{\ind}{ \mathbbm{1}\lbrace }{\rbrace}
 
 % Theorems %
 \newtheorem*{claim}{\textnormal{Claim}}
-\newtheorem{prop}{\textnormal{Proposition}}
+\newtheorem{prop}{Proposition}
+\newtheorem*{prop*}{Proposition}
+\newenvironment{solution}{\begingroup \color{nu purple} \begin{proof}[\bfseries Solution] $ $\newline $ $\newline}{\end{proof} \endgroup}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -107,3 +141,5 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+
+% S[round-mode=places, round-precision=1, table-format= -1.1,table-space-text-post={~]}]<{{~]}}
