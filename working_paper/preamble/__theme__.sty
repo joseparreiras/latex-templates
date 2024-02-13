@@ -1,0 +1,66 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Page Style %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Margins %
+\geometry{
+  top=1in,            % <-- you want to adjust this
+  inner=1in,
+  outer=1in,
+  bottom=1in,
+  headheight=3ex,       % <-- and this
+  headsep=5ex,          % <-- and this
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Section Format %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\makeatletter
+\setlength{\parindent}{24pt}    % SETUP INDENTATION
+\makeatother
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Theme %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Northwestern style 
+\definecolor{nu purple}{HTML}{492C7F} % Purple
+\definecolor{nu lightpurple}{HTML}{E3E0ED} % Light Purple
+
+% Set caption color
+% \captionsetup[table]{labelfont={color=nu purple},font={color=nu purple}} 
+% \captionsetup[figure]{labelfont={color=nu purple},font={color=nu purple}}
+
+% Hyperlinks
+\hypersetup{
+  bookmarks=true,
+  colorlinks = true,
+  linkcolor = nu purple,
+  urlcolor  = nu purple,
+  citecolor = nu purple,
+  anchorcolor = nu purple,
+  pdftex,
+  pdfusetitle,
+  pdfborder={0 0 0}
+}
+
+% JEL Codes
+\newcommand{\jelcodes}[1]{\textbf{JEL Codes:} #1}
+% Keywords
+\newcommand{\keywords}[1]{\textbf{Keywords:} #1}
+% Email
+\newcommand{\mail}[1]{\href{mailto:#1}{\texttt{#1}}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% PDF Metadata %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\makeatletter
+\AtBeginDocument{
+  \hypersetup{
+    pdftitle = {\@title},
+    pdfauthor = {\@author},
+  }
+}
+\makeatother
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

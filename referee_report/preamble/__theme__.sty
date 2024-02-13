@@ -12,6 +12,7 @@
 
 % Title %
 \renewcommand{\maketitle}{
+    \setcounter{page}{0} % Restarts page countering
     \thispagestyle{plain} % Set no head/foot for the first page
     \renewcommand{\thefootnote}{\fnsymbol{footnote}} % Set footnote to symbols
     \noindent\large\textsc{\journal \hfill \@date} \\[0.5in] \Large\textbf{ Referee Report: \@title \\[0.1in] by \paperauthors \hfill{}} \\[0.5in] 

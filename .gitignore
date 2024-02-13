@@ -2,3 +2,12 @@
 .gitattributes
 .DS_Store
 .history
+*.gz
+*.fls
+*.log
+*.snm
+*.bbl
+*.nav
+*.out
+*.aux
+*.blg

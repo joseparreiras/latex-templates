@@ -1,19 +1,19 @@
-\documentclass[a4paper, 12pt, bibend = biber, citestyle = apa, bibstyle = apa]{elegantpaper}
+\documentclass[11pt]{article}
 
 %%% Preamble
 \usepackage{preamble/__packages__}
-\addbibresource{reference.bib}
-\graphicspath{images/}
+\usepackage{preamble/__theme__}
+\usepackage{preamble/__math__}
+\graphicspath{images/} % Set path for graphics
 %%%
 
 
 %%% Document Info
 
-\title{Auge e declínio do processo de substituição de importações no Brasil}
-\author{
-  Jose Antunes-Neto \thanks{Contact: \email{jose.neto@kellogg.northwestern.edu}}
-  }
-\institute{Kellogg School of Management}
+\title{{{name}}}
+\author{Jose Antunes-Neto \thanks{\mail{jose.neto@kellogg.northwestern.edu}}}
+\affil{Kellogg School of Management}
+
 \date{\today}
 
 %%%
@@ -23,20 +23,24 @@
 \maketitle
 
 \begin{abstract}
-  \lipsum[1] \\
-  \cite{tavares2001study} \cite{tavares2016growth}
+  \lipsum[1]
 \end{abstract}
-\keywords{Substituição de importações, Brasil}
+\keywords{keyword1, keyword2, keyword3} \\
+\jelcodes{C12, C13, C14}
 
-\newpage
+\clearpage
+\tableofcontents
+
+\clearpage
 
 \section{Introduction}
 
 \lipsum[2-5]
 
-\newpage
-
+%%% References
+\clearpage
 \nocite{*}
-\printbibliography
+\bibliographystyle{plainnat}
+\bibliography{references}
 \end{document}
 

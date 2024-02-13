@@ -3,12 +3,13 @@
 %%%%%%% Loading packages and macros %%%%%%%
 \usepackage{preamble/__packages__}
 \usepackage{preamble/__theme__}
+\usepackage{preamble/__math__}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%% Document %%%%%%%
 \newcommand{\assignment}{ {{name}} }
 \newcommand{\course}{Course}
-\newcommand{\prof}{Prof}
+\newcommand{\prof}{Professor}
 \newcommand{\institute}{School}
 
 \title{\course-\assignment}
@@ -17,14 +18,18 @@
 %%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
-
-\nocite{*}
 \maketitle
 
-\section{Section 1.}
-\lipsum[5-10]
+\section{Problem 1.}
+\lipsum[1]
+\begin{prop}
+    \lipsum[2]
+\end{prop}
 
+\begin{solution}
+    \lipsum[3]
+\end{solution}
 \clearpage
 \bibliographystyle{plainnat}
-\bibliography{references}
+\bibliography{references.bib}
 \end{document}
